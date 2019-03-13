@@ -8,16 +8,34 @@ public class HandsTest {
 
 	@Test
 	public void highCardsWithNumericOnly() {
-		assertEquals("with high card: 8", new Hand("2C 3H 4S 8C 7H").getHandName());
+		assertEquals("with high card: 8", new HandBuilder()
+				.withCard("2C")
+				.withCard("3H")
+				.withCard("4S")
+				.withCard("8C")
+				.withCard("7H")
+				.build().getHandName());
 	}
 
 	@Test
 	public void highCardsWithHighestNumeric() {
-		assertEquals("with high card: 9", new Hand("2C 3H 4S 8C 9H").getHandName());
+		assertEquals("with high card: 9", new HandBuilder()
+				.withCard("2C")
+				.withCard("3H")
+				.withCard("4S")
+				.withCard("8C")
+				.withCard("9H")
+				.build().getHandName());
 	}
 
 	@Test
 	public void highCardsWithAce() throws Exception {
-		assertEquals("with high card: A", new Hand("2C 3H 4S 8C AH").getHandName());
+		assertEquals("with high card: A", new HandBuilder()
+				.withCard("2C")
+				.withCard("3H")
+				.withCard("4S")
+				.withCard("8C")
+				.withCard("AH")
+				.build().getHandName());
 	}
 }
