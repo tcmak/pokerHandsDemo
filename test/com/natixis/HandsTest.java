@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class PokerHandsTest {
+public class HandsTest {
 
 	@Test
 	public void highCardsWithNumericOnly() {
@@ -16,4 +16,8 @@ public class PokerHandsTest {
 		assertEquals("with high card: 9", new Hand("2C 3H 4S 8C 9H").getHandName());
 	}
 
+	@Test
+	public void highCardsWithAce() throws Exception {
+		assertEquals("with high card: A", new Hand("2C 3H 4S 8C AH").getHandName());
+	}
 }

@@ -17,7 +17,7 @@ public class Hand {
 	}
 
 	public String getHandName() {
-		return "with high card: " + cards.get(0).getValue();
+		return "with high card: " + cards.get(0).getValueName();
 	}
 
 }
